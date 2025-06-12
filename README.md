@@ -1,3 +1,7 @@
+Absolutely! Below is the entire `README.md` content in **GitHub-ready markdown format**. You can copy it **exactly as-is** and paste it directly into the GitHub file editor when creating or editing your repository's README:
+
+---
+
 ```markdown
 # 🛰️ AWS NetVizion — Real-Time Network Telemetry Ingestion & Forecasting
 
@@ -173,5 +177,12 @@ jupyter notebook
 Created by \Akshat
 Built with ❤️ using AWS, Terraform, Python, and Grafana
 
+---
+
+## 📜 License
+
+This project is open-sourced under the MIT License.
 
 ```
+
+
