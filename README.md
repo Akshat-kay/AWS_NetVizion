@@ -50,7 +50,7 @@ AWS NetVizion is a full-stack, cloud-native project that simulates, ingests, enr
                 +-------------------+
                         |
                         v
-                 (Optional: Athena)
+                    (Athena)
 
 ```
 
