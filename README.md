@@ -11,22 +11,46 @@ AWS NetVizion is a full-stack, cloud-native project that simulates, ingests, enr
 
 ```
 
-aws-netvizion/
-├── terraform/                # Infrastructure-as-Code for AWS setup
-│   ├── main.tf
-│   ├── provider.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-├── processor/               # Lambda enrichment function
-│   └── lambda\_function.py
-├── ingestor/                # Telemetry generator (Kinesis producer)
-│   └── generator.py
-├── forecast/                # Forecasting pipeline (Jupyter + Prophet)
-│   ├── forecast\_model.ipynb
-│   ├── forecast\_results.csv
-├── grafanadashboard.png     # Screenshot: real-time telemetry dashboard
-├── forecast.png             # Screenshot: forecasted traffic (interactive)
-└── README.md                # This file
+## 🧱 Architecture Overview
+
+```text
++------------------------------+
+|  Simulated Traffic Generator |
+|        (Python Script)       |
++--------------+---------------+
+               |
+               v
+    +------------------------+
+    | Amazon Kinesis Stream  |
+    +-----------+------------+
+                |
+                v
+      +--------------------+
+      |   AWS Lambda        |
+      |  (Enrich Metadata)  |
+      +---------+-----------+
+                |
+                v
+      +--------------------+
+      | Amazon Timestream  |
+      | (Time-series DB)   |
+      +---------+----------+
+                |
+        +-------+--------+
+        |                |
+        v                v
++---------------+   +--------------------+
+|    Grafana     |   |  Jupyter Notebook  |
+|   (Live View)  |   |   + Prophet Model  |
++---------------+   +--------------------+
+                        |
+                        v
+                +-------------------+
+                | Forecast CSV (S3) |
+                +-------------------+
+                        |
+                        v
+                 (Optional: Athena)
 
 ```
 
