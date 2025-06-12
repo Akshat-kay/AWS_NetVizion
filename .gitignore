@@ -1,0 +1,60 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+env/
+ENV/
+venv/
+*.env
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# AWS credentials or config (if used locally)
+*.pem
+*.key
+*.aws
+*.ini
+.aws/
+
+# Terraform generated files
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+terraform.tfvars.json
+crash.log
+
+# Python environment package files
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Lambda deployment artifacts
+processor/package/
+processor/lambda.zip
+
+# Output files
+forecast/forecast_results.csv
+diagrams/*.png
+
+# OS / System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs or temp files
+*.log
+*.tmp
+
+# Jupyter metadata
+*.nbconvert.ipynb
